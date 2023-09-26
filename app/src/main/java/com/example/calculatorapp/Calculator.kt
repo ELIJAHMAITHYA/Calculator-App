@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.graphics.Color.Companion.Yellow
 import androidx.compose.ui.text.font.FontWeight
@@ -84,6 +85,96 @@ fun Calculator(
                         .weight(1f),
                     onClick = {
                         onAction(CalculatorActions.Operation(CalculatorOperation.Divide))
+                    }
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+            ) {
+                CalculatorButton(
+                    symbol = "7",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(7))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "8",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(8))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "9",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(9))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "X",
+                    modifier = Modifier
+                        .background(Yellow)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Operation(CalculatorOperation.Divide))
+                    }
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+            ) {
+                CalculatorButton(
+                    symbol = "4",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(4))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "5",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(5))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "6",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(6))
+                    }
+                )
+                CalculatorButton(
+                    symbol = "+",
+                    modifier = Modifier
+                        .background(Yellow)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Operation(CalculatorOperation.Add))
                     }
                 )
             }
