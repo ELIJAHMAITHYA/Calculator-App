@@ -223,6 +223,41 @@ fun Calculator(
                     }
                 )
             }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+            ) {
+                CalculatorButton(
+                    symbol = "0",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(2f)
+                        .weight(2f),
+                    onClick = {
+                        onAction(CalculatorActions.Number(0))
+                    }
+                )
+                CalculatorButton(
+                    symbol = ".",
+                    modifier = Modifier
+                        .background(DarkGray)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Decimal)
+                    }
+                )
+                CalculatorButton(
+                    symbol = "=",
+                    modifier = Modifier
+                        .background(Yellow)
+                        .aspectRatio(1f)
+                        .weight(1f),
+                    onClick = {
+                        onAction(CalculatorActions.Calculate)
+                    }
+                )
+            }
         }
     }
 
