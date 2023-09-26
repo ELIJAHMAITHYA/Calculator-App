@@ -1,6 +1,5 @@
 package com.example.calculatorapp
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,13 +21,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.reflect.KFunction2
 
 @Composable
 fun Calculator(
     state: CalculatorState,
-    onAction: (CalculatorActions) -> Unit,
+    modifier: Modifier = Modifier,
     buttonSpacing: Dp = 8.dp,
-    modifier: Modifier = Modifier
+    onAction: (CalculatorActions) -> Unit,
+
 ) {
     Box(
         modifier = Modifier
@@ -42,7 +43,7 @@ fun Calculator(
 
         ) {
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (state.operation ?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -262,3 +263,5 @@ fun Calculator(
     }
 
 }
+
+
